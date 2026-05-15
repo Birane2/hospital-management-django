@@ -1,0 +1,212 @@
+{% include 'base.html' %}
+{% load static %}
+{% include 'navigation.html' %}
+
+{% block content %}
+<div id="carousel-slider" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-slider" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-slider" data-slide-to="1"></li>
+        <li data-target="#carousel-slider" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{% static 'images/01.jpg' %}" class="d-block w-100" alt="Soins postopératoires">
+            <div class="carousel-caption text-white">
+                <div class="background-1">
+                    <h2>Soins postopératoires</h2>
+                    <p>Les soins postopératoires regroupent l'accompagnement après une intervention chirurgicale. Ils varient selon le type d'opération et l'état de santé du patient, et incluent souvent la gestion de la douleur ainsi que le soin des plaies.</p>
+                    <a href="#departments" class="btn btn-light hero-btn">Voir tous les services</a>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'images/02.jpg' %}" class="d-block w-100" alt="Chirurgie">
+            <div class="carousel-caption text-white">
+                <div class="background-1">
+                    <h2>Chirurgie</h2>
+                    <p>La chirurgie est une spécialité médicale qui utilise des techniques opératoires manuelles et instrumentales pour diagnostiquer ou traiter une maladie, une blessure, améliorer une fonction corporelle ou réparer une zone endommagée.</p>
+                    <a href="#departments" class="btn btn-light hero-btn">Voir tous les services</a>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'images/03.jpg' %}" class="d-block w-100" alt="Unité de soins intensifs néonatals">
+            <div class="carousel-caption text-white">
+                <div class="background-1">
+                    <h2>Unité de soins intensifs néonatals</h2>
+                    <p>L'unité de soins intensifs néonatals prend en charge les nouveau-nés malades ou prématurés durant leurs premiers jours de vie. Elle offre un suivi spécialisé et des soins intensifs adaptés aux besoins des nourrissons les plus fragiles.</p>
+                    <a href="#departments" class="btn btn-light hero-btn">Voir tous les services</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carousel-slider" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Précédent</span>
+    </a>
+    <a class="carousel-control-next" href="#carousel-slider" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Suivant</span>
+    </a>
+</div>
+
+<section class="container py-5">
+    <div class="row align-items-center">
+        <div class="col-md-6" id="intro-text">
+            <span class="section-kicker">Bienvenue</span>
+            <h1 class="section-title">Bienvenue dans notre système de gestion hospitalière</h1>
+            <p class="lead text-muted">Notre établissement vous permet d'accéder à une large gamme de services médicaux à Tulsipur Dang, avec des équipements modernes, des examens de radiographie et des médecins hautement qualifiés.</p>
+        </div>
+        <div class="col-md-6">
+            <div class="quick-links-card">
+                <a href="{% url 'add_appointment' %}" class="btn btn-lg btn-block btn-primary"><i class="fa fa-calendar-minus-o mr-2"></i>Demander un rendez-vous</a>
+                <a href="#doctors" class="btn btn-lg btn-block btn-outline-primary"><i class="fa fa-user-md mr-2"></i>Trouver un médecin</a>
+                <a href="http://maps.google.com/maps?q=kathmndu" class="btn btn-lg btn-block btn-outline-dark"><i class="fa fa-map-marker mr-2"></i>Localisation</a>
+                <a href="Tel:+9779844000000" class="btn btn-lg btn-block btn-emergency"><i class="fa fa-phone mr-2"></i>Contact d'urgence</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container-fluid section-soft py-5" id="departments">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h4 class="section-kicker">Départements</h4>
+            <h1 class="section-title">Services médicaux</h1>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card service-card mb-4">
+                    <img src="{% static 'images/Infectious Diseases.jpg' %}" class="card-img-top" alt="Maladies infectieuses">
+                    <div class="card-body">
+                        <h5 class="card-title">Maladies infectieuses</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card service-card mb-4">
+                    <img src="{% static 'images/radiology.jpg' %}" class="card-img-top" alt="Radiologie">
+                    <div class="card-body">
+                        <h5 class="card-title">Radiologie</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card service-card mb-4">
+                    <img src="{% static 'images/Cardiac surgery.jpg' %}" class="card-img-top" alt="Chirurgie cardiaque">
+                    <div class="card-body">
+                        <h5 class="card-title">Chirurgie cardiaque</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card service-card mb-4">
+                    <img src="{% static 'images/Medical oncology.jpg' %}" class="card-img-top" alt="Oncologie médicale">
+                    <div class="card-body">
+                        <h5 class="card-title">Oncologie médicale</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card service-card mb-4">
+                    <img src="{% static 'images/Heamatology.jpg' %}" class="card-img-top" alt="Hématologie">
+                    <div class="card-body">
+                        <h5 class="card-title">Hématologie</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card service-card mb-4">
+                    <img src="{% static 'images/Urology.jpg' %}" class="card-img-top" alt="Urologie">
+                    <div class="card-body">
+                        <h5 class="card-title">Urologie</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container py-5">
+    <div class="col-md-12 text-center">
+        <h1 class="section-title">Notre équipe d'experts</h1>
+    </div>
+</section>
+
+<section class="container-fluid pb-5" id="doctors">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h4 class="section-kicker">Rencontrez notre équipe</h4>
+            <h1 class="section-title">Médecins spécialistes</h1>
+        </div>
+    </div>
+
+    <div class="row justify-content-center px-3 doctor-grid">
+        <div class="card shadow text-center items doctor-card">
+            <div class="card-body profile-card">
+                <img class="img-thumbnail rounded-circle border-0" src="{% static 'images/person.png' %}" style="height: 150px; width: 150px;" alt="Dr. Abc">
+                <h4 class="card-title" style="font-size: 18px;">Dr. Abc</h4>
+                <h6 class="card-subtitle">Chirurgien consultant principal</h6>
+                <p class="card-text">MBBS, MS(TU), FMAS, DMAS (WLH)</p>
+                <a href="#" class="card-link"><i class="fa fa-facebook"></i></a>
+                <a href="#" class="card-link"><i class="fa fa-instagram"></i></a>
+                <a href="#" class="card-link"><i class="fa fa-linkedin"></i></a>
+            </div>
+        </div>
+
+        <div class="card shadow text-center items doctor-card">
+            <div class="card-body profile-card">
+                <img class="img-thumbnail rounded-circle border-0" src="{% static 'images/person.png' %}" style="height: 150px; width: 150px;" alt="Dr. Def">
+                <h4 class="card-title" style="font-size: 18px;">Dr. Def</h4>
+                <h6 class="card-subtitle">Gynécologue-obstétricienne</h6>
+                <p class="card-text">MBBS, MD (NMC)</p>
+                <a href="#" class="card-link"><i class="fa fa-facebook"></i></a>
+                <a href="#" class="card-link"><i class="fa fa-instagram"></i></a>
+                <a href="#" class="card-link"><i class="fa fa-linkedin"></i></a>
+            </div>
+        </div>
+
+        <div class="card shadow text-center items doctor-card">
+            <div class="card-body profile-card">
+                <img class="img-thumbnail rounded-circle border-0" src="{% static 'images/person.png' %}" style="height: 150px; width: 150px;" alt="Dr. Ghi">
+                <h4 class="card-title" style="font-size: 18px;">Dr. Ghi</h4>
+                <h6 class="card-subtitle">Chirurgien orthopédique</h6>
+                <p class="card-text">MBBS, MS Orthopedic</p>
+                <a href="#" class="card-link"><i class="fa fa-facebook"></i></a>
+                <a href="#" class="card-link"><i class="fa fa-instagram"></i></a>
+                <a href="#" class="card-link"><i class="fa fa-linkedin"></i></a>
+            </div>
+        </div>
+
+        <div class="card shadow text-center items doctor-card">
+            <div class="card-body profile-card">
+                <img class="img-thumbnail rounded-circle border-0" src="{% static 'images/person.png' %}" style="height: 150px; width: 150px;" alt="Dr. Dev">
+                <h4 class="card-title" style="font-size: 18px;">Dr. Dev</h4>
+                <h6 class="card-subtitle">Médecin consultant</h6>
+                <p class="card-text">MBBS, MD (Médecine interne)</p>
+                <a href="#" class="card-link"><i class="fa fa-facebook"></i></a>
+                <a href="#" class="card-link"><i class="fa fa-instagram"></i></a>
+                <a href="#" class="card-link"><i class="fa fa-linkedin"></i></a>
+            </div>
+        </div>
+
+        <div class="card shadow text-center items doctor-card">
+            <div class="card-body profile-card">
+                <img class="img-thumbnail rounded-circle border-0" src="{% static 'images/person.png' %}" style="height: 150px; width: 150px;" alt="Dr. Jkl">
+                <h4 class="card-title" style="font-size: 18px;">Dr. Jkl</h4>
+                <h6 class="card-subtitle">Médecin consultant</h6>
+                <p class="card-text">MBBS, MD (Médecine interne)</p>
+                <a href="#" class="card-link"><i class="fa fa-facebook"></i></a>
+                <a href="#" class="card-link"><i class="fa fa-instagram"></i></a>
+                <a href="#" class="card-link"><i class="fa fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
+{% include 'footer.html' %}

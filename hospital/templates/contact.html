@@ -1,0 +1,46 @@
+{% include 'base.html' %}
+{% include 'navigation.html' %}
+<style>
+    .mydivstyle:hover{
+        box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+        transform: translateY(-12px);
+
+    }
+
+</style>
+
+
+{% block content %}
+<section class="page-section">
+    <div class="container">
+        <h1 class="text-center page-heading">Contactez-nous</h1>
+        <div class="row mt-4 text-center">
+          <div class="col-lg-3 col-sm-6 mb-4">
+            <div class="mydivstyle p-4 h-100">
+                <h4><i class="fas fa-phone-square"> Téléphone</i></h4>
+                <p class="mb-0"><a href="tel:+22237790676">+22237790676</a></p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 mb-4">
+            <div class="mydivstyle p-4 h-100">
+                <h4><i class="fas fa-envelope"> E-mail</i></h4>
+                <p class="mb-0"><a href="mailto:admin@admin.com">admin@admin.com</a></p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 mb-4">
+            <div class="mydivstyle p-4 h-100">
+                <h4><i class="fas fa-address-card"> Adresse du bureau</i></h4>
+                <p class="mb-0"><a href="http://maps.google.com/maps?q=Nouakchott, Mauritanie">Nouakchott, Mauritanie</a></p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 mb-4">
+            <div class="mydivstyle p-4 h-100">
+                <h4><i class="fas fa-address-card"> Horaires</i></h4>
+                <p class="mb-0">De 10 h à 17 h</p>
+            </div>
+          </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
+{% include 'footer.html' %}

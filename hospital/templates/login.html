@@ -1,0 +1,23 @@
+{% include 'base.html' %}
+{% include 'navigation.html' %}
+{% block content %}
+
+
+<div class="container form-page">
+    <h2 class="text-center page-heading">Connexion administrateur</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {% if error_message %}
+            <p class="text-danger">{{ error_message }}</p>
+        {% endif %}
+        <label>Nom de l'administrateur</label>
+        <input type="text" class="form-control" name="uname">
+        <label>Mot de passe</label>
+        <input type="password" class="form-control" name="pwd">
+        <input type="submit" value="Se connecter" class="form-control btn btn-primary">
+    </form>
+</div>
+
+
+{% endblock content %}
+{% include 'footer.html' %}

@@ -1,0 +1,27 @@
+{% include 'base.html' %}
+{% load static %}
+{% include 'navigation.html' %}
+
+<head>
+    <title>Ajouter un médecin</title>
+</head>
+<body>
+    <div class="container form-page">
+    <h1 class="page-heading">Ajouter un médecin</h1>
+
+    <form method="post">
+        <div class="form-group">
+        {% csrf_token %}
+        <label for="name">Nom :</label>
+        <input type="text" class="form-control form-control-sm" name="name" required><br>
+        <label for="phone">Téléphone :</label>
+        <input type="text" class="form-control form-control-sm" name="phone" required><br>
+        <label for="special">Spécialité :</label>
+        <input type="text" class="form-control form-control-sm" name="special" required><br>
+        <input type="submit" value="Ajouter" class="btn btn-primary px-4">
+        </div>
+    </form>
+    </div>
+
+</body>
+{% include 'footer.html' %}

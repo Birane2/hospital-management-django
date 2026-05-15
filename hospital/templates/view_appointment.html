@@ -1,0 +1,42 @@
+{% include 'base.html' %}
+{% load static %}
+{% include 'navigation.html' %}
+
+{% block content %}
+<section class="table-page">
+    <div class="container">
+        <div class="table-card">
+            <h2 class="page-heading text-center">Liste des rendez-vous</h2>
+            <div class="table-responsive">
+                <table id="example" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>ID rendez-vous</th>
+                            <th>Médecin</th>
+                            <th>Patient</th>
+                            <th>Date</th>
+                            <th>Heure</th>
+                            <th>Supprimer</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for appointment in appointments %}
+                        <tr>
+                            <td>{{appointment.id}}</td>
+                            <td>{{appointment.Doctor.Name }}</td>
+                            <td>{{appointment.Patient.Name}}</td>
+                            <td>{{appointment.date}}</td>
+                            <td>{{appointment.time}}</td>
+                            <td>
+                                <a href="{% url 'delete_appointment' appointment.id %}" onclick="return confirm('Voulez-vous vraiment supprimer cet élément ?')" class="btn btn-danger">Supprimer</a>
+                            </td>
+                        </tr>
+                        {% endfor%}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
+{% include 'footer.html' %}

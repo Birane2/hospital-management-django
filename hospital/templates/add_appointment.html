@@ -1,0 +1,84 @@
+{% include 'base.html' %}
+{% load static %}
+{% include 'navigation.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ajouter un rendez-vous</title>
+</head>
+<body>
+    <div class="container form-page">
+        <h1 class="page-heading">Demander un rendez-vous</h1>
+        <p class="text-muted">Cette demande est ouverte depuis la page d'accueil. Aucun compte patient n'est requis dans la version actuelle, mais il faut au moins un médecin et un patient enregistrés.</p>
+
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags|default:'info' }}" role="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        <form method="post">
+            <div class="form-group">
+                {% csrf_token %}
+
+                <label for="doctor">Médecin :</label>
+                <select name="doctor" id="doctor" class="form-control form-control-sm" {% if not doctors %}disabled{% endif %} required>
+                    <option value="">Sélectionnez un médecin</option>
+                    {% for doctor in doctors %}
+                        <option value="{{ doctor.pk }}">{{ doctor.Name }} - {{ doctor.Special }}</option>
+                    {% endfor %}
+                </select>
+                <br>
+
+                <label for="patient">Patient :</label>
+                <select name="patient" id="patient" class="form-control form-control-sm" {% if not patients %}disabled{% endif %} required>
+                    <option value="">Sélectionnez un patient</option>
+                    {% for patient in patients %}
+                        <option value="{{ patient.pk }}">{{ patient.Name }}</option>
+                    {% endfor %}
+                </select>
+                <br>
+
+                <label for="date">Date :</label>
+                <input type="date" name="date" id="date" class="form-control form-control-sm" required>
+                <br>
+
+                <label for="time">Heure :</label>
+                <input type="time" name="time" id="time" class="form-control form-control-sm" required>
+                <br>
+
+                {% if doctors and patients %}
+                    <input type="submit" value="Envoyer la demande de rendez-vous" class="btn btn-primary px-4">
+                {% else %}
+                    <button type="button" class="btn btn-secondary px-4" disabled>Rendez-vous indisponible</button>
+                {% endif %}
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const appointmentForm = document.querySelector('form');
+            if (!appointmentForm) {
+                console.error('Le formulaire de rendez-vous est introuvable.');
+                return;
+            }
+
+            appointmentForm.addEventListener('submit', function (event) {
+                const doctor = document.getElementById('doctor');
+                const patient = document.getElementById('patient');
+                const date = document.getElementById('date');
+                const time = document.getElementById('time');
+
+                if (!doctor.value || !patient.value || !date.value || !time.value) {
+                    event.preventDefault();
+                    alert('Merci de remplir tous les champs avant de demander un rendez-vous.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+{% include 'footer.html' %}

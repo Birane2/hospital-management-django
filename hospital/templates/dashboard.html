@@ -1,0 +1,36 @@
+{% include 'base.html' %}
+{% include 'navigation.html' %}
+{% block content %}
+<section class="dashboard-page">
+    <div class="container">
+        <h1 class="page-heading">Tableau de bord administrateur</h1>
+        <div class="row">
+            <div class="col-sm-6 col-lg-4 mb-4">
+                <div class="card dashboard-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Nombre total de médecins</h5>
+                        <p class="card-text">{{ total_doctors }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-4 mb-4">
+                <div class="card dashboard-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Nombre total de patients</h5>
+                        <p class="card-text">{{ total_patients }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-4 mb-4">
+                <div class="card dashboard-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Nombre total de rendez-vous</h5>
+                        <p class="card-text">{{ total_appointments }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+{% include 'footer.html' %}
