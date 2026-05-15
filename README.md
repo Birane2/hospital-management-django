@@ -19,7 +19,7 @@ The Django Hospital Management App is a web application for managing patients, d
 1.  Clone the repository:
    
 
-    git clone  https://github.com/rthway/hospital_managment_Django.git
+    git clone  https://github.com/Birane2/hospital-management-django.git
 
 2.  Create a virtual environment (optional, but recommended):
 
