@@ -4,20 +4,22 @@ __pycache__/
 *.pyo
 *.pyd
 
-# Virtual environment
+# Virtual environments
 venv/
-.env/
 env/
+.venv/
 
 # Django
 db.sqlite3
 *.log
 media/
-
-# Static build files
 staticfiles/
 
-# VS Code / editors
+# Environment variables
+.env
+.env.*
+
+# Editors
 .vscode/
 .idea/
 
@@ -25,17 +27,7 @@ staticfiles/
 .DS_Store
 Thumbs.db
 
-# Environment variables
-.env
-.env.*
-
 # Test / cache
 .pytest_cache/
 .coverage
 htmlcov/
-
-# Migrations cache only
-**/__pycache__/
-
-# Local settings
-local_settings.py
